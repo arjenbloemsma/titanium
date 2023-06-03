@@ -6,6 +6,14 @@ import { ProvisioningRow } from './types'
 import { Button } from '@/components/ui/button'
 import { Checkbox } from '@/components/ui/checkbox'
 
+const formatDate = (date: string) => {
+   const requestDate = Date.parse(date)
+
+   // TODO: implement a solution for the hydration issue
+   //return new Date(requestDate).toLocaleString()
+   return new Date(requestDate).toUTCString()
+}
+
 export const columns: ColumnDef<ProvisioningRow>[] = [
    {
       id: "select",
@@ -44,9 +52,7 @@ export const columns: ColumnDef<ProvisioningRow>[] = [
          if (!rawValue || typeof rawValue !== 'string') {
             return 'N/A'
          }
-         const requestDate = Date.parse(rawValue)
-
-         return new Date(requestDate).toLocaleString()
+         return formatDate(rawValue)
       }
    },
    {
