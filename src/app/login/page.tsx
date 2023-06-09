@@ -23,15 +23,17 @@ export default function LoginPage() {
   const loginWithGithub = () =>
     loginWith('github', 'Error signing in with Github')
 
-  const loginWithAuth0 = () =>
-    loginWith('auth0', 'Error signing in with Auth0')
+  const loginWithAuth0 = () => loginWith('auth0', 'Error signing in with Auth0')
 
   return (
     <>
       <div>Login Page</div>
-      <Button onClick={loginWithGithub}>Sign in using Github</Button>
-      <Button onClick={loginWithAuth0}>Sign in using Auth0</Button>
+      <Button onClick={loginWithGithub} disabled={isLoading}>
+        Sign in using Github
+      </Button>
+      <Button onClick={loginWithAuth0} disabled={isLoading}>
+        Sign in using Auth0
+      </Button>
     </>
-  );
+  )
 }
-

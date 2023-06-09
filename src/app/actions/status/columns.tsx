@@ -16,18 +16,18 @@ const formatDate = (date: string) => {
 
 export const columns: ColumnDef<ProvisioningRow>[] = [
    {
-      id: "select",
+      id: 'select',
       header: ({ table }) => (
          <Checkbox
             checked={table.getIsAllPageRowsSelected()}
-            onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
+            onCheckedChange={value => table.toggleAllPageRowsSelected(!!value)}
             aria-label="Select all"
          />
       ),
       cell: ({ row }) => (
          <Checkbox
             checked={row.getIsSelected()}
-            onCheckedChange={(value) => row.toggleSelected(!!value)}
+            onCheckedChange={value => row.toggleSelected(!!value)}
             aria-label="Select row"
          />
       ),
@@ -39,11 +39,11 @@ export const columns: ColumnDef<ProvisioningRow>[] = [
       header: ({ column }) => {
          return (
             <Button
-               variant='ghost'
+               variant="ghost"
                onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
             >
                Requested
-               <ArrowUpDown className='ml-2 h-4 w-4' />
+               <ArrowUpDown className="ml-2 h-4 w-4" />
             </Button>
          )
       },
@@ -53,7 +53,7 @@ export const columns: ColumnDef<ProvisioningRow>[] = [
             return 'N/A'
          }
          return formatDate(rawValue)
-      }
+      },
    },
    {
       accessorKey: 'SiteAlias',
@@ -72,5 +72,3 @@ export const columns: ColumnDef<ProvisioningRow>[] = [
       header: 'Created',
    },
 ]
-
-
