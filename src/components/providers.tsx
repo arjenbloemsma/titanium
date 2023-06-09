@@ -7,10 +7,11 @@ interface ProviderProps {
    children: ReactNode
 }
 
-const Providers: FC<ProviderProps> = ({ children }) =>
+const Providers: FC<ProviderProps> = ({ children }) => (
    <>
-      <Toaster position='top-center' reverseOrder={false} />
+      <Toaster position="top-center" reverseOrder={false} />
       {children}
    </>
+)
 
 export default Providers

@@ -1,4 +1,4 @@
-type ProvisioningStatus = "Pending" | "Provisioning" | "Provisioned" | "Failed"
+type ProvisioningStatus = 'Pending' | 'Provisioning' | 'Provisioned' | 'Failed'
 
 export type ProvisioningRow = {
    SiteAlias: string
@@ -20,4 +20,3 @@ export type ProvisioningRow = {
    LogicAppRunId: string
    Requested: string // Date
 }
-
